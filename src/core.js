@@ -13,10 +13,24 @@ export const defaultDimensions = () => [
   {id:'effectiveness',side:'management',label:'Effectiveness',labelZh:'有效性',weight:5,unit:'',kind:'text',rubric:'Define the outcome, measure and grading criteria together before assigning a grade.'}
 ];
 export function createFlow(label='Flow 1') {return {id:uid('flow'),label,volume:null,values:{},insight:'',experienceNotes:'',managementNotes:'',source:'',discussion:[]};}
+export function placeLegend(project,flow,dimensionId,legend) {
+  const dimension=project.dimensions.find(d=>d.id===dimensionId);
+  if(!dimension||!legend)throw new Error('Choose a dimension and a legend.');
+  if(legend.category==='emotions'&&dimension.side!=='experience')throw new Error('Emotional marks belong to an experience dimension.');
+  const value=flow.values[dimensionId]??={value:'',score:null,note:''};
+  value.stickers??=[];
+  // One emotional mark per dimension; an emotion is also the visible 1–10 grade.
+  if(legend.category==='emotions')value.stickers=value.stickers.filter(id=>!id.startsWith('emotion-'));
+  if(!value.stickers.includes(legend.id)){
+    if(value.stickers.length>=30)throw new Error('Limit: 30 legends per dimension.');
+    value.stickers.push(legend.id);
+  }
+  if(legend.category==='emotions')value.score=legend.score;
+}
 export function createSection(label='New sub-section') {return {id:uid('section'),label,summary:'',flows:[createFlow()]};}
 export function createProject() {
   const section=createSection('First encounter');
-  return {schema:SCHEMA,version:'0.1.0',id:uid('project'),title:'Untitled pathway',goal:'',period:'',volume:null,team:'',context:'',demo:false,
+  return {schema:SCHEMA,version:'0.2.0',id:uid('project'),title:'Untitled pathway',goal:'',period:'',volume:null,team:'',context:'',demo:false,
     dimensions:defaultDimensions(),settings:{combination:'sum',experienceWeight:1,managementWeight:1,weightRationale:''},sections:[section],
     nodes:[{id:uid('node'),sectionId:section.id,label:'Start here',kind:'process',x:300,y:70}],edges:[],updatedAt:new Date().toISOString()};
 }
@@ -39,8 +53,8 @@ export function rows(project) {return project.sections.flatMap(s=>s.flows.map(f=
 export function priorityRows(project) {return rows(project).filter(r=>r.combined!==null).sort((a,b)=>a.combined-b.combined);}
 export function csvCell(v) {let s=v==null?'':String(v);if(/^[\s]*[=+@-]/.test(s)&&!/^-[\d.]+$/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}
 export function csvExport(project) {
-  const header=['Sub-section','Flow','Patient volume','Experience grade','Managerial grade',project.settings.combination==='sum'?'Sum / 20':'Weighted combined / 10','Insight','Experience summary','Managerial summary','Evidence source',...project.dimensions.flatMap(d=>[d.label+' | weight',d.label+' | observed value',d.label+' | grade / 10',d.label+' | evidence / reason'])];
-  return '\ufeff'+[header,...rows(project).map(r=>[r.section.label,r.flow.label,r.flow.volume,r.experience.value,r.management.value,r.combined,r.flow.insight,r.flow.experienceNotes,r.flow.managementNotes,r.flow.source,...project.dimensions.flatMap(d=>[d.weight,r.flow.values[d.id]?.value,r.flow.values[d.id]?.score,r.flow.values[d.id]?.note])])].map(row=>row.map(csvCell).join(',')).join('\r\n');
+  const header=['Sub-section','Flow','Patient volume','Experience grade','Managerial grade',project.settings.combination==='sum'?'Sum / 20':'Weighted combined / 10','Insight','Experience summary','Managerial summary','Evidence source',...project.dimensions.flatMap(d=>[d.label+' | weight',d.label+' | observed value',d.label+' | grade / 10',d.label+' | evidence / reason',d.label+' | legend IDs'])];
+  return '\ufeff'+[header,...rows(project).map(r=>[r.section.label,r.flow.label,r.flow.volume,r.experience.value,r.management.value,r.combined,r.flow.insight,r.flow.experienceNotes,r.flow.managementNotes,r.flow.source,...project.dimensions.flatMap(d=>[d.weight,r.flow.values[d.id]?.value,r.flow.values[d.id]?.score,r.flow.values[d.id]?.note,(r.flow.values[d.id]?.stickers||[]).join(' | ')])])].map(row=>row.map(csvCell).join(',')).join('\r\n');
 }
 // Import only this app's portable format. Validate before replacing the current project.
 export function validateProject(p) {
@@ -65,6 +79,7 @@ export function validateProject(p) {
       flowIds.push(f.id);
       if(!id(f.id)||!str(f.label,300)||!optnum(f.volume)||!str(f.insight)||!str(f.experienceNotes)||!str(f.managementNotes)||!str(f.source)||!f.values||Array.isArray(f.values)||typeof f.values!=='object')fail('Invalid flow.');
       for(const [key,v]of Object.entries(f.values)){if(!id(key)||!v||!str(v.value??'',20000)||!str(v.note??'',20000)||!(v.score===null||(num(v.score,10)&&v.score>=1)))fail('Grades must be blank or between 1 and 10.');}
+      for(const v of Object.values(f.values))if(v.stickers!==undefined&&(!Array.isArray(v.stickers)||v.stickers.length>30||!v.stickers.every(id)))fail('Invalid legend assignments.');
       if(!Array.isArray(f.discussion)||f.discussion.length>500)fail('Invalid discussion records.');
       for(const a of f.discussion)if(!id(a.id)||!str(a.text)||!str(a.owner,300)||!str(a.status,40)||!['open','agreed','testing','done'].includes(a.status))fail('Invalid discussion record.');
     }

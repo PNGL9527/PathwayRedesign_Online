@@ -1,7 +1,7 @@
 {
   "schema": "pathway-redesign/1",
-  "version": "0.1.0",
-  "id": "project-216993c9-6b11-4198-9879-89db177a6e15",
+  "version": "0.2.0",
+  "id": "project-ab36c4ea-00dc-4ca4-bdc6-a34d241ec630",
   "title": "Untitled pathway",
   "goal": "",
   "period": "",
@@ -109,12 +109,12 @@
   },
   "sections": [
     {
-      "id": "section-e2029e3e-6621-4096-976a-804e20b742c3",
+      "id": "section-aff8c1cc-b713-42fb-bbd3-09207e236294",
       "label": "First encounter",
       "summary": "",
       "flows": [
         {
-          "id": "flow-59572159-1f73-4fbf-804a-ea8fef306cfa",
+          "id": "flow-467e46e5-c78e-4e47-aa89-0f960d186a33",
           "label": "Flow 1",
           "volume": null,
           "values": {},
@@ -129,8 +129,8 @@
   ],
   "nodes": [
     {
-      "id": "node-2c08dac5-b22b-41c9-9e51-f0a240f5176c",
-      "sectionId": "section-e2029e3e-6621-4096-976a-804e20b742c3",
+      "id": "node-086e1920-f284-435b-90ae-49b4511d6939",
+      "sectionId": "section-aff8c1cc-b713-42fb-bbd3-09207e236294",
       "label": "Start here",
       "kind": "process",
       "x": 300,
@@ -138,5 +138,5 @@
     }
   ],
   "edges": [],
-  "updatedAt": "2026-10-21T14:26:40.867Z"
+  "updatedAt": "2026-10-21T14:53:05.329Z"
 }

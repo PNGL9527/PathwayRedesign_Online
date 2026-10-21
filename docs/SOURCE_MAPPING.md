@@ -17,7 +17,7 @@ These files were read for adaptation; they are not redistributed in this source 
 | Thesis, benchmark | §9.3.3, printed pp.210–214, PDF pp.114–116 | Weighted side grades, original sum /20, optional normalized side weighting /10, lower complete grades first. |
 | Thesis, negotiated dimensions | §10.1.2, printed p.234, PDF p.126 | Editable dimension names, weights, evidence types, units and grading criteria; rationale field. |
 | Thesis, proposed process | §10.1.4, printed pp.236–238, PDF pp.127–128 | Facilitation guide: purpose, measures, evidence and discussion. This proposal is not presented as a validated workflow. |
-| Workbook legends | Legends sheet; thesis §9.3.1, printed p.206 | Roles and encounters can be described in evidence fields. No third-party stickers are copied; graph shapes use original SVG code. |
+| Workbook legends | Legends sheet; thesis §9.3.1, printed p.206 | Roles and encounters can be described in evidence fields. The 58 original numbered icons are extracted unchanged, organized by category and assigned to flow dimensions. Graph shapes use original SVG code. See LEGEND_CREDITS.md for retained source credits. |
 
 ## Example transcription
 
@@ -52,8 +52,12 @@ The app does not infer grades from minutes, cost or patient volume. Teams define
 - Missing positively weighted grades block complete scores and ranking. A zero weight preserves a contextual dimension without treating missing data as zero performance.
 - Any custom numerical measure is still graded by humans. Units are editable; no medical thresholds or clinical recommendations are encoded.
 - The map simplifies the historical example from thesis Figure 46, attributed there to Schertler et al. (2007), *Dual-source computed tomography in patients with acute chest pain: Feasibility and image quality*, DOI 10.1007/s00330-007-0724-9. No image from that paper is copied.
-- No source photos, participants’ details or third-party icon packs are included.
+- No source photos or participants’ details are included. The selected workbook’s 58 legend icons are included unchanged with the source Notes credits preserved.
 
 ## Project format
 
 `schema: "pathway-redesign/1"` identifies the portable JSON format. `src/core.js` owns the calculations, CSV encoding and import validation. `src/examples.js` contains the reconstruction, and `src/app.js` owns browser interaction and rendering. The standalone HTML is generated from those sources by `build.mjs`.
+
+## Version 0.2 visual correction
+
+The first web iteration did not faithfully carry the original visual language or legends forward. Version 0.2 reads the workbook theme and cell fills directly: Shared #FBBC04 / #FFF2CC, Experience #EA4335 / #FBF0F0 / #F4CCCC, Managerial #4285F4 / #EAEFF4 / #CFE2F3. It retains the original icon artwork, printed identifiers and expressions. Source example assignments use the same encountered images, including cardiologist 10, case manager 15, Talking 01, Medical intervention/check 01, Interior space 01 and the corresponding emotional grades.

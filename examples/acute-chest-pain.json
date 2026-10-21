@@ -1,6 +1,6 @@
 {
   "schema": "pathway-redesign/1",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "id": "acute-chest-pain-example",
   "title": "Acute chest pain",
   "goal": "Improve patient experience across the pathway",
@@ -121,22 +121,39 @@
             "arrangement": {
               "value": "Process arrangement",
               "score": 4,
-              "note": "“I am not so happy about how they arrange the process.”"
+              "note": "“I am not so happy about how they arrange the process.”",
+              "stickers": [
+                "emotion-04"
+              ]
             },
             "communication": {
               "value": "Information from the team",
               "score": 5,
-              "note": "“I think they don’t tell everything to me very clearly, but I can figure it out.”"
+              "note": "“I think they don’t tell everything to me very clearly, but I can figure it out.”",
+              "stickers": [
+                "emotion-05"
+              ]
             },
             "encounter": {
               "value": "Check and conversation with the doctor",
               "score": 6,
-              "note": "“Doctors here are nice, but I can still feel the sense of distance.”"
+              "note": "“Doctors here are nice, but I can still feel the sense of distance.”",
+              "stickers": [
+                "emotion-06",
+                "encounter-talk-01",
+                "role-cardiologist-10",
+                "role-case-manager-15",
+                "encounter-medical-01"
+              ]
             },
             "location": {
               "value": "The cardiology exam room",
               "score": 4,
-              "note": "“The check room is not easy to be found.”"
+              "note": "“The check room is not easy to be found.”",
+              "stickers": [
+                "emotion-04",
+                "location-room-01"
+              ]
             },
             "lead": {
               "value": "17.8",
@@ -185,22 +202,38 @@
             "arrangement": {
               "value": "Process arrangement",
               "score": 6,
-              "note": "Interviewed patients mostly said that the arrangement is not bad."
+              "note": "Interviewed patients mostly said that the arrangement is not bad.",
+              "stickers": [
+                "emotion-06"
+              ]
             },
             "communication": {
               "value": "Information at this stage",
               "score": 4,
-              "note": "“I need more information in this phase.”"
+              "note": "“I need more information in this phase.”",
+              "stickers": [
+                "emotion-04"
+              ]
             },
             "encounter": {
               "value": "Conversation with the doctor",
               "score": 7,
-              "note": "The doctors are really nice."
+              "note": "The doctors are really nice.",
+              "stickers": [
+                "emotion-07",
+                "encounter-talk-01",
+                "role-cardiologist-10",
+                "role-case-manager-15"
+              ]
             },
             "location": {
               "value": "The cardiology exam room",
               "score": 4,
-              "note": "“The check room is not easy to be found.”"
+              "note": "“The check room is not easy to be found.”",
+              "stickers": [
+                "emotion-04",
+                "location-room-01"
+              ]
             },
             "lead": {
               "value": "13.5",
@@ -242,22 +275,38 @@
             "arrangement": {
               "value": "Process arrangement",
               "score": 6,
-              "note": "Interviewed patients mostly said that the arrangement is not bad."
+              "note": "Interviewed patients mostly said that the arrangement is not bad.",
+              "stickers": [
+                "emotion-06"
+              ]
             },
             "communication": {
               "value": "Information at this stage",
               "score": 4,
-              "note": "“I need more information in this phase.”"
+              "note": "“I need more information in this phase.”",
+              "stickers": [
+                "emotion-04"
+              ]
             },
             "encounter": {
               "value": "Conversation with the doctor",
               "score": 7,
-              "note": "The doctors are really nice."
+              "note": "The doctors are really nice.",
+              "stickers": [
+                "emotion-07",
+                "encounter-talk-01",
+                "role-cardiologist-10",
+                "role-case-manager-15"
+              ]
             },
             "location": {
               "value": "The cardiology exam room",
               "score": 4,
-              "note": "“The check room is not easy to be found.”"
+              "note": "“The check room is not easy to be found.”",
+              "stickers": [
+                "emotion-04",
+                "location-room-01"
+              ]
             },
             "lead": {
               "value": "13.5",
@@ -699,5 +748,5 @@
       "label": "Positive"
     }
   ],
-  "updatedAt": "2026-10-21T14:26:40.865Z"
+  "updatedAt": "2026-10-21T14:53:05.326Z"
 }
