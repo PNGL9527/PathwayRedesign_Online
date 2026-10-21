@@ -1,0 +1,703 @@
+{
+  "schema": "pathway-redesign/1",
+  "version": "0.1.0",
+  "id": "acute-chest-pain-example",
+  "title": "Acute chest pain",
+  "goal": "Improve patient experience across the pathway",
+  "period": "March – July 2021",
+  "volume": 100,
+  "team": "Service design · Clinical care · Operations",
+  "context": "Reconstruction of the 2021 thesis example. Only S-1 and S-2 contain example evidence from the supplied Excel. Other records are intentionally blank. This historical pathway is an illustration for discussing the tool, not a current clinical protocol.",
+  "demo": true,
+  "dimensions": [
+    {
+      "id": "arrangement",
+      "side": "experience",
+      "label": "Organizing / arrangement",
+      "labelZh": "流程组织与安排",
+      "weight": 3,
+      "unit": "",
+      "kind": "text",
+      "rubric": "1 = very poor; 10 = very good. Agree on local criteria before grading."
+    },
+    {
+      "id": "communication",
+      "side": "experience",
+      "label": "Communication / information",
+      "labelZh": "沟通与信息",
+      "weight": 4,
+      "unit": "",
+      "kind": "text",
+      "rubric": "Consider clarity, accessibility and the information people need."
+    },
+    {
+      "id": "encounter",
+      "side": "experience",
+      "label": "Main encounter / roles",
+      "labelZh": "主要接触与角色",
+      "weight": 5,
+      "unit": "",
+      "kind": "text",
+      "rubric": "Consider the quality of interactions with people and interfaces."
+    },
+    {
+      "id": "location",
+      "side": "experience",
+      "label": "Location / department",
+      "labelZh": "场所与科室",
+      "weight": 2,
+      "unit": "",
+      "kind": "text",
+      "rubric": "Consider navigation, access and the experience of the setting."
+    },
+    {
+      "id": "lead",
+      "side": "management",
+      "label": "Lead time",
+      "labelZh": "流程耗时",
+      "weight": 5,
+      "unit": "min",
+      "kind": "number",
+      "rubric": "Elapsed time from the start to the end of this flow. Grade using team-agreed criteria; higher is better."
+    },
+    {
+      "id": "target",
+      "side": "management",
+      "label": "Target time",
+      "labelZh": "目标时间",
+      "weight": 0,
+      "unit": "min",
+      "kind": "number",
+      "rubric": "An agreed time benchmark. Weight 0 to use as context only; higher grades must always mean better performance."
+    },
+    {
+      "id": "waiting",
+      "side": "management",
+      "label": "Waiting time",
+      "labelZh": "等候时间",
+      "weight": 4,
+      "unit": "min",
+      "kind": "number",
+      "rubric": "Time spent waiting. Enter minutes as evidence, then assign a separate 1–10 performance grade."
+    },
+    {
+      "id": "cost",
+      "side": "management",
+      "label": "Economic cost",
+      "labelZh": "经济成本",
+      "weight": 3,
+      "unit": "EUR",
+      "kind": "number",
+      "rubric": "State the cost scope and period in the evidence note; agree on how to grade it."
+    },
+    {
+      "id": "effectiveness",
+      "side": "management",
+      "label": "Effectiveness",
+      "labelZh": "有效性",
+      "weight": 5,
+      "unit": "",
+      "kind": "text",
+      "rubric": "Define the outcome, measure and grading criteria together before assigning a grade."
+    }
+  ],
+  "settings": {
+    "combination": "sum",
+    "experienceWeight": 1,
+    "managementWeight": 1,
+    "weightRationale": "The example workbook uses lead time 5, waiting time 4, cost 3 and effectiveness 5 (total 17). Target time is context only (weight 0). Experience weights 3, 4, 5 and 2 total 14. These totals are recomputed, correcting broken or mismatched spreadsheet references."
+  },
+  "sections": [
+    {
+      "id": "s1",
+      "label": "Initial assessment",
+      "summary": "",
+      "flows": [
+        {
+          "id": "s1-f1",
+          "label": "Flow 1",
+          "volume": 100,
+          "values": {
+            "arrangement": {
+              "value": "Process arrangement",
+              "score": 4,
+              "note": "“I am not so happy about how they arrange the process.”"
+            },
+            "communication": {
+              "value": "Information from the team",
+              "score": 5,
+              "note": "“I think they don’t tell everything to me very clearly, but I can figure it out.”"
+            },
+            "encounter": {
+              "value": "Check and conversation with the doctor",
+              "score": 6,
+              "note": "“Doctors here are nice, but I can still feel the sense of distance.”"
+            },
+            "location": {
+              "value": "The cardiology exam room",
+              "score": 4,
+              "note": "“The check room is not easy to be found.”"
+            },
+            "lead": {
+              "value": "17.8",
+              "score": 4,
+              "note": "Example value; the original workbook does not specify grading thresholds."
+            },
+            "target": {
+              "value": "15",
+              "score": null,
+              "note": "Context only; not included in the weighted grade."
+            },
+            "waiting": {
+              "value": "25.7",
+              "score": 1,
+              "note": "Example value; agree on grading thresholds as a team."
+            },
+            "cost": {
+              "value": "",
+              "score": 2,
+              "note": "The workbook supplies a grade, but no raw cost value."
+            },
+            "effectiveness": {
+              "value": "",
+              "score": 1,
+              "note": "The workbook supplies a grade, but no operational definition."
+            }
+          },
+          "insight": "Waiting time, examination experience and finding the cardiology exam room deserve discussion.",
+          "experienceNotes": "Consider process arrangement, information clarity and navigation. Discuss which changes matter most to the redesign goal.",
+          "managementNotes": "Interpret the recorded waiting time with clinical staff; the example does not define its sampling method.",
+          "source": "Peng Lu – Pathway Redesign Tool Example.xlsx · Ranking Version – example · rows 5–9. Quoted material is illustrative workbook content.",
+          "discussion": []
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "label": "First decision",
+      "summary": "",
+      "flows": [
+        {
+          "id": "s2-f1",
+          "label": "Flow 1 · Positive",
+          "volume": 19,
+          "values": {
+            "arrangement": {
+              "value": "Process arrangement",
+              "score": 6,
+              "note": "Interviewed patients mostly said that the arrangement is not bad."
+            },
+            "communication": {
+              "value": "Information at this stage",
+              "score": 4,
+              "note": "“I need more information in this phase.”"
+            },
+            "encounter": {
+              "value": "Conversation with the doctor",
+              "score": 7,
+              "note": "The doctors are really nice."
+            },
+            "location": {
+              "value": "The cardiology exam room",
+              "score": 4,
+              "note": "“The check room is not easy to be found.”"
+            },
+            "lead": {
+              "value": "13.5",
+              "score": 4,
+              "note": "Previous period: 12.9 minutes."
+            },
+            "target": {
+              "value": "15",
+              "score": null,
+              "note": "Context only."
+            },
+            "waiting": {
+              "value": "5",
+              "score": 4,
+              "note": "Previous period: 6.7 minutes."
+            },
+            "cost": {
+              "value": "",
+              "score": 9,
+              "note": "Raw cost was not supplied."
+            },
+            "effectiveness": {
+              "value": "",
+              "score": 7,
+              "note": "The example does not state the measure."
+            }
+          },
+          "insight": "Information and navigation remain opportunities for improvement.",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "Example workbook · rows 10–13. Illustrative, not clinical observations collected by this web app.",
+          "discussion": []
+        },
+        {
+          "id": "s2-f2",
+          "label": "Flow 2 · Negative / non-diagnostic",
+          "volume": 81,
+          "values": {
+            "arrangement": {
+              "value": "Process arrangement",
+              "score": 6,
+              "note": "Interviewed patients mostly said that the arrangement is not bad."
+            },
+            "communication": {
+              "value": "Information at this stage",
+              "score": 4,
+              "note": "“I need more information in this phase.”"
+            },
+            "encounter": {
+              "value": "Conversation with the doctor",
+              "score": 7,
+              "note": "The doctors are really nice."
+            },
+            "location": {
+              "value": "The cardiology exam room",
+              "score": 4,
+              "note": "“The check room is not easy to be found.”"
+            },
+            "lead": {
+              "value": "13.5",
+              "score": 4,
+              "note": "Previous period: 12.9 minutes."
+            },
+            "target": {
+              "value": "15",
+              "score": null,
+              "note": "Context only."
+            },
+            "waiting": {
+              "value": "5",
+              "score": 4,
+              "note": "Previous period: 6.7 minutes."
+            },
+            "cost": {
+              "value": "",
+              "score": 9,
+              "note": "Raw cost was not supplied."
+            },
+            "effectiveness": {
+              "value": "",
+              "score": 7,
+              "note": "The example does not state the measure."
+            }
+          },
+          "insight": "Information and navigation remain opportunities for improvement.",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "Example workbook · rows 14–17. Illustrative, not clinical observations collected by this web app.",
+          "discussion": []
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "label": "CT investigation",
+      "summary": "",
+      "flows": [
+        {
+          "id": "s3-f1",
+          "label": "Flow 1",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "label": "Clinical suspicion",
+      "summary": "",
+      "flows": [
+        {
+          "id": "s4-f1",
+          "label": "Flow 1 · Coronary",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        },
+        {
+          "id": "s4-f2",
+          "label": "Flow 2 · Aortic",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        },
+        {
+          "id": "s4-f3",
+          "label": "Flow 3 · Pulmonary",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "label": "Further investigation",
+      "summary": "",
+      "flows": [
+        {
+          "id": "s5-f1",
+          "label": "Flow 1 · Coronary CT",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        },
+        {
+          "id": "s5-f2",
+          "label": "Flow 2 · Aortic CT",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "label": "Follow-up assessment",
+      "summary": "",
+      "flows": [
+        {
+          "id": "s6-f1",
+          "label": "Flow 1 · Follow-up enzymes",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        },
+        {
+          "id": "s6-f2",
+          "label": "Flow 2 · Wells / Geneva",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "label": "Next steps",
+      "summary": "",
+      "flows": [
+        {
+          "id": "s7-f1",
+          "label": "Flow 1 · Discharge",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        },
+        {
+          "id": "s7-f2",
+          "label": "Flow 2 · Reperfusion",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        },
+        {
+          "id": "s7-f3",
+          "label": "Flow 3 · Other causes",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        },
+        {
+          "id": "s7-f4",
+          "label": "Flow 4 · CT",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n1",
+      "sectionId": "s1",
+      "label": "Acute chest pain",
+      "kind": "terminal",
+      "x": 340,
+      "y": 50,
+      "flowId": "s1-f1"
+    },
+    {
+      "id": "n2",
+      "sectionId": "s1",
+      "label": "ECG + initial cardiac enzymes",
+      "kind": "decision",
+      "x": 340,
+      "y": 150,
+      "flowId": "s1-f1"
+    },
+    {
+      "id": "n3",
+      "sectionId": "s2",
+      "label": "Consider reperfusion / antithrombins",
+      "kind": "process",
+      "x": 100,
+      "y": 270,
+      "flowId": "s2-f1"
+    },
+    {
+      "id": "n4",
+      "sectionId": "s2",
+      "label": "Negative or non-diagnostic",
+      "kind": "process",
+      "x": 340,
+      "y": 270,
+      "flowId": "s2-f2"
+    },
+    {
+      "id": "n5",
+      "sectionId": "s3",
+      "label": "CT investigation",
+      "kind": "process",
+      "x": 340,
+      "y": 390,
+      "flowId": "s3-f1"
+    },
+    {
+      "id": "n6",
+      "sectionId": "s4",
+      "label": "Acute coronary syndrome?",
+      "kind": "decision",
+      "x": 100,
+      "y": 520,
+      "flowId": "s4-f1"
+    },
+    {
+      "id": "n7",
+      "sectionId": "s4",
+      "label": "Acute aortic syndrome?",
+      "kind": "decision",
+      "x": 340,
+      "y": 520,
+      "flowId": "s4-f2"
+    },
+    {
+      "id": "n8",
+      "sectionId": "s4",
+      "label": "Pulmonary embolism?",
+      "kind": "decision",
+      "x": 580,
+      "y": 520,
+      "flowId": "s4-f3"
+    },
+    {
+      "id": "n9",
+      "sectionId": "s5",
+      "label": "CT · coronary investigation",
+      "kind": "process",
+      "x": 100,
+      "y": 650,
+      "flowId": "s5-f1"
+    },
+    {
+      "id": "n10",
+      "sectionId": "s5",
+      "label": "CT · aortic investigation",
+      "kind": "process",
+      "x": 340,
+      "y": 650,
+      "flowId": "s5-f2"
+    },
+    {
+      "id": "n11",
+      "sectionId": "s6",
+      "label": "Follow-up cardiac enzymes",
+      "kind": "decision",
+      "x": 100,
+      "y": 780,
+      "flowId": "s6-f1"
+    },
+    {
+      "id": "n12",
+      "sectionId": "s6",
+      "label": "Wells / Geneva + D-dimer",
+      "kind": "decision",
+      "x": 580,
+      "y": 780,
+      "flowId": "s6-f2"
+    },
+    {
+      "id": "n13",
+      "sectionId": "s7",
+      "label": "Hospital discharge",
+      "kind": "terminal",
+      "x": 40,
+      "y": 950,
+      "flowId": "s7-f1"
+    },
+    {
+      "id": "n14",
+      "sectionId": "s7",
+      "label": "Consider reperfusion / antithrombins",
+      "kind": "process",
+      "x": 220,
+      "y": 950,
+      "flowId": "s7-f2"
+    },
+    {
+      "id": "n15",
+      "sectionId": "s7",
+      "label": "Consider chest X-ray / other causes",
+      "kind": "process",
+      "x": 430,
+      "y": 950,
+      "flowId": "s7-f3"
+    },
+    {
+      "id": "n16",
+      "sectionId": "s7",
+      "label": "CT investigation",
+      "kind": "process",
+      "x": 630,
+      "y": 950,
+      "flowId": "s7-f4"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "from": "n1",
+      "to": "n2",
+      "label": ""
+    },
+    {
+      "id": "e1",
+      "from": "n2",
+      "to": "n3",
+      "label": "Positive"
+    },
+    {
+      "id": "e2",
+      "from": "n2",
+      "to": "n4",
+      "label": "Negative"
+    },
+    {
+      "id": "e3",
+      "from": "n4",
+      "to": "n5",
+      "label": ""
+    },
+    {
+      "id": "e4",
+      "from": "n5",
+      "to": "n6",
+      "label": "Flow 1"
+    },
+    {
+      "id": "e5",
+      "from": "n5",
+      "to": "n7",
+      "label": "Flow 2"
+    },
+    {
+      "id": "e6",
+      "from": "n5",
+      "to": "n8",
+      "label": "Flow 3"
+    },
+    {
+      "id": "e7",
+      "from": "n6",
+      "to": "n9",
+      "label": ""
+    },
+    {
+      "id": "e8",
+      "from": "n7",
+      "to": "n10",
+      "label": ""
+    },
+    {
+      "id": "e9",
+      "from": "n9",
+      "to": "n11",
+      "label": ""
+    },
+    {
+      "id": "e10",
+      "from": "n8",
+      "to": "n12",
+      "label": ""
+    },
+    {
+      "id": "e11",
+      "from": "n11",
+      "to": "n13",
+      "label": "Negative"
+    },
+    {
+      "id": "e12",
+      "from": "n11",
+      "to": "n14",
+      "label": "Positive"
+    },
+    {
+      "id": "e13",
+      "from": "n12",
+      "to": "n15",
+      "label": "Negative"
+    },
+    {
+      "id": "e14",
+      "from": "n12",
+      "to": "n16",
+      "label": "Positive"
+    }
+  ],
+  "updatedAt": "2026-10-21T14:26:40.865Z"
+}

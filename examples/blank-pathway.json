@@ -1,0 +1,142 @@
+{
+  "schema": "pathway-redesign/1",
+  "version": "0.1.0",
+  "id": "project-216993c9-6b11-4198-9879-89db177a6e15",
+  "title": "Untitled pathway",
+  "goal": "",
+  "period": "",
+  "volume": null,
+  "team": "",
+  "context": "",
+  "demo": false,
+  "dimensions": [
+    {
+      "id": "arrangement",
+      "side": "experience",
+      "label": "Organizing / arrangement",
+      "labelZh": "流程组织与安排",
+      "weight": 3,
+      "unit": "",
+      "kind": "text",
+      "rubric": "1 = very poor; 10 = very good. Agree on local criteria before grading."
+    },
+    {
+      "id": "communication",
+      "side": "experience",
+      "label": "Communication / information",
+      "labelZh": "沟通与信息",
+      "weight": 4,
+      "unit": "",
+      "kind": "text",
+      "rubric": "Consider clarity, accessibility and the information people need."
+    },
+    {
+      "id": "encounter",
+      "side": "experience",
+      "label": "Main encounter / roles",
+      "labelZh": "主要接触与角色",
+      "weight": 5,
+      "unit": "",
+      "kind": "text",
+      "rubric": "Consider the quality of interactions with people and interfaces."
+    },
+    {
+      "id": "location",
+      "side": "experience",
+      "label": "Location / department",
+      "labelZh": "场所与科室",
+      "weight": 2,
+      "unit": "",
+      "kind": "text",
+      "rubric": "Consider navigation, access and the experience of the setting."
+    },
+    {
+      "id": "lead",
+      "side": "management",
+      "label": "Lead time",
+      "labelZh": "流程耗时",
+      "weight": 5,
+      "unit": "min",
+      "kind": "number",
+      "rubric": "Elapsed time from the start to the end of this flow. Grade using team-agreed criteria; higher is better."
+    },
+    {
+      "id": "target",
+      "side": "management",
+      "label": "Target time",
+      "labelZh": "目标时间",
+      "weight": 3,
+      "unit": "min",
+      "kind": "number",
+      "rubric": "An agreed time benchmark. Weight 0 to use as context only; higher grades must always mean better performance."
+    },
+    {
+      "id": "waiting",
+      "side": "management",
+      "label": "Waiting time",
+      "labelZh": "等候时间",
+      "weight": 4,
+      "unit": "min",
+      "kind": "number",
+      "rubric": "Time spent waiting. Enter minutes as evidence, then assign a separate 1–10 performance grade."
+    },
+    {
+      "id": "cost",
+      "side": "management",
+      "label": "Economic cost",
+      "labelZh": "经济成本",
+      "weight": 3,
+      "unit": "EUR",
+      "kind": "number",
+      "rubric": "State the cost scope and period in the evidence note; agree on how to grade it."
+    },
+    {
+      "id": "effectiveness",
+      "side": "management",
+      "label": "Effectiveness",
+      "labelZh": "有效性",
+      "weight": 5,
+      "unit": "",
+      "kind": "text",
+      "rubric": "Define the outcome, measure and grading criteria together before assigning a grade."
+    }
+  ],
+  "settings": {
+    "combination": "sum",
+    "experienceWeight": 1,
+    "managementWeight": 1,
+    "weightRationale": ""
+  },
+  "sections": [
+    {
+      "id": "section-e2029e3e-6621-4096-976a-804e20b742c3",
+      "label": "First encounter",
+      "summary": "",
+      "flows": [
+        {
+          "id": "flow-59572159-1f73-4fbf-804a-ea8fef306cfa",
+          "label": "Flow 1",
+          "volume": null,
+          "values": {},
+          "insight": "",
+          "experienceNotes": "",
+          "managementNotes": "",
+          "source": "",
+          "discussion": []
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-2c08dac5-b22b-41c9-9e51-f0a240f5176c",
+      "sectionId": "section-e2029e3e-6621-4096-976a-804e20b742c3",
+      "label": "Start here",
+      "kind": "process",
+      "x": 300,
+      "y": 70
+    }
+  ],
+  "edges": [],
+  "updatedAt": "2026-10-21T14:26:40.867Z"
+}

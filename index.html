@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A shared workspace for service designers and healthcare teams to discuss pathways, evidence and patient experience.">
+  <meta name="theme-color" content="#254c40">
+  <title>Pathway Redesign · Peng Lu</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to workspace</a>
+  <div id="app"></div>
+  <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <input type="file" accept="application/json,.json" id="import-file" hidden>
+  <div id="print-report"></div>
+  <noscript>This workspace needs JavaScript. Enable it to edit pathways and evidence.</noscript>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
